@@ -25,6 +25,10 @@ MAX_RATE_CONTEXT = 129
 MAX_RATE_SHOPS = 129
 MAX_RATE_GOODS = 129
 
+# Your credentials are required in order to give access for the bot.
+MY_USERNAME = "username-example"
+MY_PASSWORD = "put-your-password-here"
+
 # # This variant is more suitable for debugging, in order to see the real process in browser.
 # driver = webdriver.Chrome()
 
@@ -83,9 +87,9 @@ def log_in():
     driver.get("https://second-website.com/office/index.php?r=login")
     WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.NAME, "login")))
     username = driver.find_element(By.NAME, "login")
-    username.send_keys("kingmarket")
+    username.send_keys(MY_USERNAME)
     password = driver.find_element(By.NAME, "passwd")
-    password.send_keys("Info04122015")
+    password.send_keys(MY_PASSWORD)
     sleep(2)
     driver.find_element(By.CSS_SELECTOR,"table.input_table .input_btn, table.input_table .input_btn:hover").click()
     sleep(2)
