@@ -22,6 +22,10 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException
 # clicks (or save money, otherwise).
 MAX_RATE = 1.29
 
+# Your credentials are required in order to give access for the bot.
+MY_EMAIL = "example-email@gmail.com"
+MY_PASSWORD = "put-your-password-here"
+
 # # This variant is more suitable for debugging, in order to see the real process in browser.
 # driver = webdriver.Chrome()
 
@@ -92,9 +96,9 @@ def log_in():
     driver.get("https://first-website.com/cabinet")
     WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.NAME, "email")))
     username = driver.find_element(By.NAME, "email")
-    username.send_keys("lifestyleshop1@gmail.com")
+    username.send_keys(MY_EMAIL)
     password = driver.find_element(By.NAME, "password")
-    password.send_keys("info04122015")
+    password.send_keys(MY_PASSWORD)
     sleep(2)
     driver.find_element(By.CSS_SELECTOR, ".popup .form-action .form-button").click()
     sleep(2)
